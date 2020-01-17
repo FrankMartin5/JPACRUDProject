@@ -42,15 +42,10 @@ class PokemonTest {
 		em.close();
 	}
 
-	@Disabled
-	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
-	
-	@DisplayName("Test pokemon mapping entity")
+	@DisplayName("Test pokemon entity mapping")
 	@Test
 	public void Test1() {
+		assertNotNull(pokemon);
 		assertEquals("Treecko", pokemon.getName());
 	}
 
