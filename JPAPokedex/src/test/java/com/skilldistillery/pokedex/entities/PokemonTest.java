@@ -33,7 +33,7 @@ class PokemonTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		pokemon = em.find(Pokemon.class, 1);
+		pokemon = em.find(Pokemon.class, 6);
 	}
 
 	@AfterEach
@@ -45,7 +45,15 @@ class PokemonTest {
 	@Test
 	public void Test1() {
 		assertNotNull(pokemon);
-		assertEquals("Treecko", pokemon.getName());
+		assertEquals("Blaziken", pokemon.getName());
+		assertEquals("Fire", pokemon.getType1());
+		assertEquals("Fighting", pokemon.getType2());
+		assertEquals(1.9, pokemon.getHeight());
+		assertEquals(52, pokemon.getWeight());
+		assertEquals("Blaze", pokemon.getAbility());
+		assertEquals("Flames spout from its wrists, enveloping its knuckles. Its punches scorch its foes.", pokemon.getEntry());
+		assertEquals("https://cdn.bulbagarden.net/upload/thumb/9/90/257Blaziken.png/240px-257Blaziken.png", pokemon.getImage());
+		assertEquals("2019-01-17", pokemon.getLastUpdate().toString());
 	}
 
 }
