@@ -4,11 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Pokedex</title>
+<title>3rd Gen Pokedex</title>
 </head>
 <body>
 
 <h1>Pokedex</h1>
+<form action="getPkmn.do" method="GET">
+	Pokemon ID: <input type="text" name="pid"/> <input type="submit" value="Show Pokemon"/>
+</form>
 
 </body>
 </html>
