@@ -26,7 +26,11 @@ public class PokemonDAOImpl implements PokemonDAO {
 
 	@Override
 	public Pokemon findByName(String name) {
-		return em.find(Pokemon.class, name);
+		System.out.println(name);
+		String query = "SELECT p FROM Pokemon p WHERE p.name LIKE :name";
+		Pokemon pkmn = em.createQuery(query, Pokemon.class).setParameter("name", "%"+name+"%").getSingleResult();
+		
+		return pkmn;
 	}
 	
 	@Override

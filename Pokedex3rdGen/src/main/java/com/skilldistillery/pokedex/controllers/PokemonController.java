@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.pokedex.data.PokemonDAO;
@@ -33,6 +34,14 @@ public class PokemonController {
 		System.out.println(pkmn);
 		return "showPkmn";
 	}
+	@RequestMapping(path = "getPkmnByName.do")
+	public String findPkmnByID(@RequestParam String name, Model model) {
+		Pokemon pkmn = null;
+		pkmn = dao.findByName(name);
+		model.addAttribute("pokemon", pkmn);
+		System.out.println(pkmn);
+		return "showPkmn";
+	}
 	
 	@RequestMapping(path="createPkmn.do", method = RequestMethod.POST)
 	public ModelAndView createPkmn(Pokemon pkData) {
@@ -43,11 +52,20 @@ public class PokemonController {
 		return mv;
 	}
 	
-	@RequestMapping(path="updatePkmn.do", method = RequestMethod.POST)
+	@RequestMapping(path="sendToUpdatePkmn.do", method = RequestMethod.GET)
 	public ModelAndView updatePkmn(Integer id) {
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("pkInfo", dao.findByID(id));
-		
+		mv.addObject("pokemon", dao.findByID(id));
+		mv.setViewName("updatePkmn");
+		return mv;
+	}
+	
+	
+	@RequestMapping(path="updatePkmn.do", method = RequestMethod.POST)
+	public ModelAndView updatedPkmn(Integer id, Pokemon pkmn) {
+		ModelAndView mv = new ModelAndView();
+		dao.updatePkmn(id, pkmn);
+		mv.addObject("pokemon", dao.findByID(id));
 		mv.setViewName("updatedPkmn");
 		return mv;
 	}

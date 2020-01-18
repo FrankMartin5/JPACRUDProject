@@ -13,7 +13,7 @@
 	Pokemon ID: <input type="text" name="pid" /> <input type="submit" value="Show Pokemon"/><br>
 </form><br>
 <form action="getPkmnByName.do" method="GET">
-	Pokemon Name: <input type="text" name="pName" /> <input type="submit" value="Show Pokemon"/><br>
+	Pokemon Name: <input type="text" name="name" /> <input type="submit" value="Show Pokemon"/><br>
 </form><br>
 <form>
 <a href="createPkmn.jsp">Create a Pokemon</a>

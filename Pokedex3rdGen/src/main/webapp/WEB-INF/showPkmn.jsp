@@ -36,8 +36,10 @@
 		<input type="hidden" value="${pokemon.id}" name="id">
 		<input type="submit" value="Delete">
 		</form>
-		<form action="">
-		<a href="updatePkmn.jsp" id="button">Update</a>
+		<form action="sendToUpdatePkmn.do">
+		<input type="hidden" value="${pokemon.id}" name="id">
+		<input type="submit" value="Update">
+		<!-- <a href="updatePkmn.jsp" id="button">Update</a> -->
 		</form>
 		<a href="home.jsp" id="button">Home</a>
 	</c:if>
