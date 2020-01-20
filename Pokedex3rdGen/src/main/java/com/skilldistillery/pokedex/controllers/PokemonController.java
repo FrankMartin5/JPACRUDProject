@@ -25,6 +25,10 @@ public class PokemonController {
 		model.addAttribute("pokemon", pkmn);
 		return "home";
 	}
+	@RequestMapping(path= {"newPkmn.do"}, method = RequestMethod.GET )
+	public String newPkmn() {
+		return "createPkmn";
+	}
 	
 	@RequestMapping(path = "getPkmn.do")
 	public String findPkmnByID(Integer pid, Model model) {

@@ -1,0 +1,23 @@
+* {
+	text-align: center;
+	
+}
+
+body {
+	text-align: center;
+background: rgb(251,63,63);
+background: radial-gradient(circle, rgba(251,63,63,0.23713235294117652) 0%, rgba(252,70,72,1) 100%);
+}
+table, tr, td {
+width:70%; 
+    margin-left:15%; 
+    margin-right:15%;
+    padding: 15px;
+  text-align: center;
+  border: 3px solid black;
+}
+
+input {
+margin: 2px;
+padding: 2px;
+}
