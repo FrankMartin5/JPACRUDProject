@@ -11,6 +11,7 @@
 + MySQL
 + Gradle
 + Spring MVC
++ Spring Boot
 + HTML5
 + CSS3
 + Java
